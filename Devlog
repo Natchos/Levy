@@ -1,0 +1,19 @@
+Devlog
+
+2016-03-29
+Project started
+Removed Messaging system.
+Converted to vs2015
+Implemented implicit conversion from vector2d to sfml vector2. No idea if it works yet...
+
+2016-04-28
+Created a basic input manager with support for events, mouse-clicks, keyboards and combos.
+Created h_Music (wrapper for sf::Music), h_SFX(wrapper for sf::Sound)
+Started work on SoundManager.
+
+2016-06-11
+Worked on SoundManager. Mostly done. Work remaining: Make loading functions(fixed directory?), test.
+
+Future goals:
+Change Randomizer to Static class(I mean like seriously, why is it a class?)
+Get something actually made

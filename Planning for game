@@ -1,0 +1,75 @@
+Levy
+
+
+Features:
+RTS
+Fog of War
+Resourse gathering buildings in a radius
+Buildings can be upgraded to next tier if supported my other resource buildings
+Units created only when called(LEVY)
+When units are levied buildings don't generate resources
+Resources are used for expanding
+
+Types of objects:
+
+Units
+Buildings
+Ground(tiles? = small tiles)
+
+
+Building theory:
+Basic building(farms, timbermans hut, herders shack etc) harvest resources around themselves in a radius.
+All basic buildings are the same "building", charasteristic determined when built via type of terrain situation
+Multiple basic buildings support next tier building.
+(Etc according to recursion)
+
+Building "networks" are basically trees where # and types of childs are determined by its own type.
+
+Building types:
+	Farm(1)
+	Hamlet(2)
+	Town(3)
+	City(4)
+
+Potential
+	Timbermans hut(1)
+	Herders shack(1)
+	Fishing pier(1)
+	Loggers village(2)
+	Dock(2)
+	
+	Tower(1)
+	Lighttower(1)
+	Fort(2)
+	Keep(3)
+	Fortress(4)
+
+Unit theory:
+Lower tier buildings give worse units
+1 "levy" per base
+Higher tier gives better units(fewer aswell?)
+Higher tier buildings calls all lower
+
+Unit types:
+Levy
+Guard
+Soldier
+Knight
+
+Potential
+	Archer(Timberman)
+	Rider(Herders shack)
+	Longbowman(Loggers village)
+	
+	
+
+Terrain types:
+Fertile ground
+
+Potential
+	Water
+	Forest
+	Hills
+	Mountains
+	Barren
+	Grass
