@@ -1,0 +1,65 @@
+Player
+  Name
+  Camera
+  Position
+  Selection
+  Resources
+  Emblem?
+  Colour
+
+UI
+
+
+Entities:
+  Player
+  Position
+  ID
+  ToC
+  Lifetime
+  Enum Type
+  Size
+  HealthMax
+  HealthCurrent
+  Alive
+  update();
+
+Buildings (Entities)
+  *Buildings(Children)
+  Function
+  Radius
+  LevyType
+  LevySize
+  OperatingCapacity
+
+Units(Entities)
+  MoveSpeed
+  Destination
+  Direction
+  RotationSpeed
+  move();
+  
+Attacking
+  Attack(Min-Max?)
+  Ranged
+  Range
+  AttackCooldown
+  Target
+  attack(Entity target)
+  beHit()
+
+  
+Logic
+
+Entity-manager:
+  -Container of units (Future expansion: Container(Player)-Container(Units))
+  -Container of buildings (Future expansion: Container(Player)-Container(Buildings))
+  update();
+  removeDead();
+  
+  
+threads:
+  mainLoop
+  graphicLoop
+  input
+  
+  
