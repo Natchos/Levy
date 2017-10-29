@@ -16,9 +16,12 @@ Vector2D(sf::Vector2<T>or_orig):x(or_orig.x),y(or_orig.y){}
 	
 void Zero(){x=0.0; y=0.0;}
 
-Vector2D V_Rotate(double m_rads);
+Vector2D rotate(double m_rads);
 
-inline double    LengthSq()const;
+inline double    LengthSq()const
+{
+	return (x * x + y * y);
+}
 
 inline double    Length()const
 {
@@ -40,7 +43,7 @@ inline double    Dot(const Vector2D& v2)const;
 
 inline int       Sign(const Vector2D& v2)const;
 
-inline Vector2D  Perp()const;
+static inline Vector2D  Perp(Vector2D vec);
 
 //adjusts x and y so that the length of the vector does not exceed max
 inline void      Truncate(double max);
@@ -51,9 +54,12 @@ inline double    Distance(const Vector2D &v2)const;
  //squared version of above.
 inline double    DistanceSq(const Vector2D &v2)const;
 
-inline void      Reflect(const Vector2D& norm);
+//Returns the scale of this vector
+static inline Vector2D	 Scale(Vector2D vec, double factor);
 
-inline Vector2D  GetReverse()const;
+inline Vector2D  Reflect(const Vector2D& norm);
+
+static inline Vector2D  GetReverse(Vector2D vec);
 template<typename g_Vec>
 const Vector2D& operator+=(const g_Vec &rhs)
 {
@@ -94,9 +100,13 @@ const Vector2D& operator/(const float& rhs)
 {
 	return Vector2D(x/rhs,y/rhs);
 }
-const Vector2D& operator*(const float& rhs)
+Vector2D& operator*(const float& rhs)
 {
 	return Vector2D(x*rhs,y*rhs);
+}
+Vector2D operator*(const double& rhs)
+{
+	return Vector2D(x*rhs, y*rhs);
 }
 bool operator==(const Vector2D& rhs)const
 {
