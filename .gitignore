@@ -213,4 +213,5 @@ ModelManifest.xml
 
 #opendb errors
 *.VC.opendb
+*.VC.db
 *.opendb
