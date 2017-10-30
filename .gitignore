@@ -212,5 +212,5 @@ _Pvt_Extensions/
 ModelManifest.xml
 
 #opendb errors
-.VC.opendb
+*.VC.opendb
 *.opendb
