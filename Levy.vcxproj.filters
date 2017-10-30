@@ -22,32 +22,20 @@
     <Filter Include="Header Files\Manager">
       <UniqueIdentifier>{49968f22-bbcb-42e6-9d0a-0d1036c33b38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Levy Code">
+      <UniqueIdentifier>{fc1d5af1-7564-44fc-92e6-3313cf8af4a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Levy Source">
+      <UniqueIdentifier>{0ac21e88-24f1-42f0-9448-c2be5f94774a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Homebrew">
+      <UniqueIdentifier>{04145036-eb84-485e-8df2-67a7b831fd70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\HomeBrew">
+      <UniqueIdentifier>{b5f80699-a177-4364-b3fb-d596451f53f0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main_Engine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="code\2FloatVector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="code\Basic_Render_Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="code\Engine_Enums.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="code\Game_Object.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="code\Randomizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="code\TimedText.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="code\Watch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="code\Console_Log.cpp">
       <Filter>Source Files\Manager</Filter>
     </ClCompile>
@@ -66,32 +54,44 @@
     <ClCompile Include="Code\SoundManager.cpp">
       <Filter>Source Files\Manager</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Unit_Functionality.cpp">
+      <Filter>Source Files\Levy Source</Filter>
+    </ClCompile>
+    <ClCompile Include="code\2FloatVector.cpp">
+      <Filter>Source Files\Homebrew</Filter>
+    </ClCompile>
+    <ClCompile Include="code\Basic_Render_Entity.cpp">
+      <Filter>Source Files\Homebrew</Filter>
+    </ClCompile>
+    <ClCompile Include="code\Engine_Enums.cpp">
+      <Filter>Source Files\Homebrew</Filter>
+    </ClCompile>
+    <ClCompile Include="code\Game_Object.cpp">
+      <Filter>Source Files\Homebrew</Filter>
+    </ClCompile>
     <ClCompile Include="Code\Homebrew_Music.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Homebrew</Filter>
     </ClCompile>
     <ClCompile Include="Code\Homebrew_Sound.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Homebrew</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Unit.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Main_Engine.cpp">
+      <Filter>Source Files\Homebrew</Filter>
+    </ClCompile>
+    <ClCompile Include="code\Randomizer.cpp">
+      <Filter>Source Files\Homebrew</Filter>
+    </ClCompile>
+    <ClCompile Include="code\TimedText.cpp">
+      <Filter>Source Files\Homebrew</Filter>
+    </ClCompile>
+    <ClCompile Include="code\Watch.cpp">
+      <Filter>Source Files\Homebrew</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Basic_Unit.cpp">
+      <Filter>Source Files\Levy Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="code\2FloatVector.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="code\Basic_Render_Entity.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="code\Game_Object.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="code\Watch.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="sfml 32\include\sfml\system\Vector2.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="sfml 32\include\sfml\audio\AlResource.hpp">
       <Filter>Header Files\Ext</Filter>
     </ClInclude>
@@ -383,26 +383,44 @@
     <ClInclude Include="Code\SoundManager.hpp">
       <Filter>Header Files\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Homebrew_Sound.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Code\Unit_Functionality.hpp">
+      <Filter>Header Files\Levy Code</Filter>
+    </ClInclude>
+    <ClInclude Include="code\2FloatVector.hpp">
+      <Filter>Header Files\HomeBrew</Filter>
+    </ClInclude>
+    <ClInclude Include="code\Basic_Render_Entity.hpp">
+      <Filter>Header Files\HomeBrew</Filter>
+    </ClInclude>
+    <ClInclude Include="code\Game_Object.hpp">
+      <Filter>Header Files\HomeBrew</Filter>
     </ClInclude>
     <ClInclude Include="Code\Homebrew_Music.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\HomeBrew</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Code\Homebrew_Sound.hpp">
+      <Filter>Header Files\HomeBrew</Filter>
+    </ClInclude>
+    <ClInclude Include="code\Watch.hpp">
+      <Filter>Header Files\HomeBrew</Filter>
+    </ClInclude>
+    <ClInclude Include="sfml 32\include\sfml\system\Vector2.hpp">
+      <Filter>Header Files\HomeBrew</Filter>
     </ClInclude>
     <ClInclude Include="resource1.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Levy Code</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Unit.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files\Levy Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Basic_Unit.hpp">
+      <Filter>Header Files\Levy Code</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineMath.hpp">
+      <Filter>Header Files\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="sfml 32\include\sfml\system\Vector2.inl">
-      <Filter>Header Files</Filter>
-    </None>
     <None Include="sfml 32\include\sfml\system\Vector3.inl">
       <Filter>Header Files\Ext</Filter>
     </None>
@@ -423,6 +441,9 @@
     </None>
     <None Include="sfml 32\include\sfml\graphics\Rect.inl">
       <Filter>Header Files\Ext</Filter>
+    </None>
+    <None Include="sfml 32\include\sfml\system\Vector2.inl">
+      <Filter>Header Files\HomeBrew</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

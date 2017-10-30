@@ -7,6 +7,20 @@ Player
   Emblem?
   Colour
 
+Camera
+	XY position
+	XY size
+	
+  
+Map
+	[x][y] Node
+	update();
+	
+	Node(GraphicEntity, BaseEntity):
+		Type
+		Occupied?
+		
+		
 UI
 
 

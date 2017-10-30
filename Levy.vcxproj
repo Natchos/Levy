@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClCompile Include="code\2FloatVector.cpp" />
     <ClCompile Include="code\Basic_Render_Entity.cpp" />
+    <ClCompile Include="Code\Basic_Unit.cpp" />
     <ClCompile Include="code\Console_Log.cpp" />
     <ClCompile Include="code\Engine_Enums.cpp" />
     <ClCompile Include="code\Game_Object.cpp" />
@@ -138,13 +139,14 @@
     <ClCompile Include="code\ScreenLog.cpp" />
     <ClCompile Include="Code\SoundManager.cpp" />
     <ClCompile Include="code\TimedText.cpp" />
-    <ClCompile Include="Code\Unit.cpp" />
+    <ClCompile Include="Code\Unit_Functionality.cpp" />
     <ClCompile Include="code\Watch.cpp" />
     <ClCompile Include="Main_Engine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="code\2FloatVector.hpp" />
     <ClInclude Include="code\Basic_Render_Entity.hpp" />
+    <ClInclude Include="Code\Basic_Unit.hpp" />
     <ClInclude Include="code\Console_Log.hpp" />
     <ClInclude Include="code\Game_Object.hpp" />
     <ClInclude Include="code\GraphicsManager.hpp" />
@@ -154,8 +156,9 @@
     <ClInclude Include="code\ObjectManager.hpp" />
     <ClInclude Include="code\ScreenLog.hpp" />
     <ClInclude Include="Code\SoundManager.hpp" />
-    <ClInclude Include="Code\Unit.hpp" />
+    <ClInclude Include="Code\Unit_Functionality.hpp" />
     <ClInclude Include="code\Watch.hpp" />
+    <ClInclude Include="EngineMath.hpp" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="resource1.h" />
     <ClInclude Include="sfml 32\include\sfml\Audio.hpp" />

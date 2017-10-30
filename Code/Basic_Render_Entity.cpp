@@ -32,8 +32,3 @@ void Basic_Render_Entity::setDrawPrio(GFXDrawPriority newPriority)
 {
 	this->drawPrio = newPriority;
 }
-
-void Basic_Render_Entity::GFX_Update()
-{
-	//Empty at this level
-}

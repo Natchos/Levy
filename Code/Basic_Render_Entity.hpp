@@ -22,7 +22,7 @@ public:
 	void setDrawPrio(GFXDrawPriority newPriority);
 
 	//Always called, if this object is visible. Overrides are allowed.
-	virtual void GFX_Update();
+	virtual void GFX_Update() = 0;
 protected:
 	//Used for timing functions, or when a deriavative might need it for animating and such.
 	Watch internalTimer;

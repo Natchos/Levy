@@ -23,7 +23,6 @@ public:
 	bool getDeleteFlag();
 	void setDeleteFlag(bool nVal = true);
 
-
 	//Abstract class.
 	virtual void OBJ_Update() = 0;
 protected:
@@ -31,7 +30,6 @@ protected:
 	bool Alive;
 	//Set to true when this entity should be deleted
 	bool Delete;
-private:
 	//Can be used to identify an object. Can/should not be changed after the object is initialized.
 	Object_Type OBJ_Type;
 };
