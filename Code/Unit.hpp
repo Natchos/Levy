@@ -20,7 +20,7 @@ private:
 	// The direction this unit is facing, should be normalized
 	Vector2D direction;
 
-	//Max Rotation speed. Should be in radians
+	// Max Rotation speed. Should be in radians
 	double rotationSpeed;
 
 public:
