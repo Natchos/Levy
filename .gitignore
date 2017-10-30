@@ -211,7 +211,6 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 
-#Ignore db files
-*.VC.VC.opendb
+#opendb errors
 *.VC.opendb
 *.opendb

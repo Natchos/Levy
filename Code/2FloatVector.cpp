@@ -2,7 +2,7 @@
 #include "2FloatVector.hpp"
 
 //Returns this vector, rotated by m_rads Radians.
-Vector2D Vector2D::V_Rotate(double m_rads)
+Vector2D Vector2D::rotate(double m_rads)
 {
 	double new_x = this->x;
 	double new_y = this->y;
@@ -13,9 +13,9 @@ Vector2D Vector2D::V_Rotate(double m_rads)
 	return Vector2D(new_x,new_y);
 }
 
-inline double Vector2D::LengthSq()const
+inline double Vector2D::Dot(const Vector2D& v2)const
 {
-	return (x * x + y * y);
+	return x*v2.x + y*v2.y;
 }
 
 enum {clockwise = 1, anticlockwise = -1};
@@ -32,9 +32,9 @@ inline int Vector2D::Sign(const Vector2D& v2)const
   }
 }
 
-inline Vector2D Vector2D::Perp()const
+inline Vector2D Vector2D::Perp(Vector2D vec)
 {
-  return Vector2D(-y, x);
+  return Vector2D(-vec.y, vec.x);
 }
 
 inline double Vector2D::Distance(const Vector2D &v2)const
@@ -53,6 +53,19 @@ inline double Vector2D::DistanceSq(const Vector2D &v2)const
   return ySeparation*ySeparation + xSeparation*xSeparation;
 }
 
+ inline Vector2D Vector2D::Scale(Vector2D vec, double factor)
+{
+	return Vector2D(vec.x*factor, vec.y*factor);
+}
+
+inline Vector2D Vector2D::Reflect(const Vector2D& norm)
+{
+	Vector2D n(norm);
+	const double dots = this->Dot(norm);
+	return Vector2D(*this - n * dots * 2.f);
+}
+
+
 inline void Vector2D::Truncate(double max)
 {
   if (this->Length() > max)
@@ -63,7 +76,7 @@ inline void Vector2D::Truncate(double max)
   } 
 }
 
-inline Vector2D Vector2D::GetReverse()const
+inline Vector2D Vector2D::GetReverse(Vector2D vec)
 {
-  return Vector2D(-this->x, -this->y);
+  return Vector2D(-vec.x, -vec.y);
 }

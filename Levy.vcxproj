@@ -86,7 +86,7 @@
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
-      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>$(ProjectDir)SFML 32\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -137,6 +137,7 @@
     <ClCompile Include="code\ScreenLog.cpp" />
     <ClCompile Include="Code\SoundManager.cpp" />
     <ClCompile Include="code\TimedText.cpp" />
+    <ClCompile Include="Code\Unit.cpp" />
     <ClCompile Include="code\Watch.cpp" />
     <ClCompile Include="Main_Engine.cpp" />
   </ItemGroup>
@@ -152,6 +153,7 @@
     <ClInclude Include="code\ObjectManager.hpp" />
     <ClInclude Include="code\ScreenLog.hpp" />
     <ClInclude Include="Code\SoundManager.hpp" />
+    <ClInclude Include="Code\Unit.hpp" />
     <ClInclude Include="code\Watch.hpp" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="resource1.h" />
