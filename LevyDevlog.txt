@@ -1,0 +1,17 @@
+Levy Devlog:
+
+2017-11-01
+Created Game_Entity which inherits from Game_Object and implements lifeTime, ID, ToC, position and health.
+Did some research, all trig functions are available in std libs. I might write my own wrapper tho, undecided on that one.
+Changed Basic_Unit to inherit from Game_Entity.
+Next stop: Wrapping upp Basic_Unit and then start creating Node.
+
+2017-10-30
+First entry
+
+Created Basic_Unit
+
+Realised I really need some basic physic & math functions. Going to check for it in sfml or math. If need be I'll implement by myself.
+Some functions I know I'll need:
+All trigs and antitrigs
+Collisions

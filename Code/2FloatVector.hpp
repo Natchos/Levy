@@ -28,7 +28,7 @@ inline double    Length()const
 	return sqrt(x * x + y * y);
 }
 
-inline void      Normalize()
+inline Vector2D      Normalize()
 { 
   double vector_length = this->Length();
 
@@ -37,6 +37,7 @@ inline void      Normalize()
     this->x /= vector_length;
     this->y /= vector_length;
   }
+  return *this;
 }
 
 inline double    Dot(const Vector2D& v2)const;

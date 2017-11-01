@@ -10,7 +10,7 @@ void Basic_Unit::GFX_Update()
 void Basic_Unit::move()
 {
 	this->position += this->velocity;
-	Vector2D desiredFacing(Vector2D(this->destination - this->position).Normalize);
+	Vector2D desiredFacing(Vector2D(this->destination - this->position).Normalize());
 }
 
 //Updates object parameters

@@ -129,6 +129,7 @@
     <ClCompile Include="Code\Basic_Unit.cpp" />
     <ClCompile Include="code\Console_Log.cpp" />
     <ClCompile Include="code\Engine_Enums.cpp" />
+    <ClCompile Include="Code\Game_Entity.cpp" />
     <ClCompile Include="code\Game_Object.cpp" />
     <ClCompile Include="code\GraphicsManager.cpp" />
     <ClCompile Include="Code\Homebrew_Music.cpp" />
@@ -148,6 +149,7 @@
     <ClInclude Include="code\Basic_Render_Entity.hpp" />
     <ClInclude Include="Code\Basic_Unit.hpp" />
     <ClInclude Include="code\Console_Log.hpp" />
+    <ClInclude Include="Code\Game_Entity.hpp" />
     <ClInclude Include="code\Game_Object.hpp" />
     <ClInclude Include="code\GraphicsManager.hpp" />
     <ClInclude Include="Code\Homebrew_Music.hpp" />

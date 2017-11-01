@@ -90,6 +90,9 @@
     <ClCompile Include="Code\Basic_Unit.cpp">
       <Filter>Source Files\Levy Source</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Game_Entity.cpp">
+      <Filter>Source Files\Levy Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sfml 32\include\sfml\audio\AlResource.hpp">
@@ -418,6 +421,9 @@
     </ClInclude>
     <ClInclude Include="EngineMath.hpp">
       <Filter>Header Files\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Game_Entity.hpp">
+      <Filter>Header Files\Levy Code</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

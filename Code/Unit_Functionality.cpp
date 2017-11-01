@@ -20,9 +20,8 @@ void Unit_Functionality::rotate(double rads)
 	}
 }
 
-Unit_Functionality::Unit_Functionality(Vector2D pos, Vector2D vel, int maxVel, Vector2D dest, Vector2D fac, double rotSpeed)
+Unit_Functionality::Unit_Functionality(Vector2D vel, int maxVel, Vector2D dest, Vector2D fac, double rotSpeed)
 {
-	this->position = pos;
 	this->velocity = vel;
 	this->maxVelocity = maxVel;
 	this->destination = dest;
@@ -30,9 +29,8 @@ Unit_Functionality::Unit_Functionality(Vector2D pos, Vector2D vel, int maxVel, V
 	this->rotationSpeed = rotSpeed;
 }
 
-Unit_Functionality::Unit_Functionality(Vector2D pos, int maxVel, double rotSpeed)
+Unit_Functionality::Unit_Functionality(int maxVel, double rotSpeed)
 {
-	this->position = pos;
 	this->maxVelocity = maxVel;
 	this->rotationSpeed = rotSpeed;
 	this->velocity = Vector2D(0, 0);
@@ -43,15 +41,7 @@ Unit_Functionality::Unit_Functionality(Vector2D pos, int maxVel, double rotSpeed
 Unit_Functionality::~Unit_Functionality()
 {}
 
-void Unit_Functionality::setPosition(Vector2D vel)
-{
-	this->position = vel;
-}
 
-void Unit_Functionality::incrementPosition(Vector2D vel)
-{
-	this->position += vel;
-}
 
 void Unit_Functionality::setVelocity(Vector2D vel, bool ovr)
 {
@@ -86,11 +76,6 @@ void Unit_Functionality::setRotationSpeed(double rSpeed)
 	this->rotationSpeed = rSpeed;
 }
 
-Vector2D Unit_Functionality::getPosition()
-{
-	return this->position;
-}
-
 Vector2D Unit_Functionality::getVelocity()
 {
 	return this->velocity;
@@ -103,7 +88,7 @@ Vector2D Unit_Functionality::getDestination()
 
 Vector2D Unit_Functionality::getDirection()
 {
-	return this->direction;
+	return this->facing;
 }
 
 int Unit_Functionality::getMaxVelocity()
