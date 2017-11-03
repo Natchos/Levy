@@ -3,11 +3,10 @@
 
 int Game_Entity::IDCounter = 0;
 
-Game_Entity::Game_Entity(Vector2D pos, long lt, int sz, int mHealth, int cHealth)
+Game_Entity::Game_Entity(long lt, int sz, int mHealth, int cHealth)
 {
 	this->lifeClock = Watch();
 	this->ID = createNewID();
-	this->position = pos;
 	this->lifetime = lt;
 	this->size = sz;
 	this->maxHealth = mHealth;
@@ -15,12 +14,12 @@ Game_Entity::Game_Entity(Vector2D pos, long lt, int sz, int mHealth, int cHealth
 	this->lifeClock.restart();
 }
 
-Game_Entity::Game_Entity(Vector2D pos, int sz, int mHealth) : Game_Entity(Vector2D(0, 0), -1, sz, mHealth, mHealth)
+Game_Entity::Game_Entity(int sz, int mHealth) : Game_Entity( -1, sz, mHealth, mHealth)
 {
 
 }
 
-Game_Entity::Game_Entity(long lt, int sz, int mHealth) : Game_Entity(Vector2D(0, 0), lt, sz, mHealth, mHealth)
+Game_Entity::Game_Entity(long lt, int sz, int mHealth) : Game_Entity(lt, sz, mHealth, mHealth)
 {
 }
 
@@ -30,10 +29,6 @@ int Game_Entity::createNewID()
 	return this->IDCounter;
 }
 
-Vector2D Game_Entity::getPosition()
-{
-	return this->position;
-}
 
 int Game_Entity::getID()
 {
@@ -68,16 +63,6 @@ int Game_Entity::getMaxHealth()
 int Game_Entity::getCurrentHealth()
 {
 	return this->currentHealth;
-}
-
-void Game_Entity::setPosition(Vector2D nPos)
-{
-	this->position = nPos;
-}
-
-void Game_Entity::incrementPosition(Vector2D nPos)
-{
-	this->position += nPos;
 }
 
 void Game_Entity::setLifetime(long nLifetime)

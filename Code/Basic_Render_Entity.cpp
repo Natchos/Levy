@@ -23,6 +23,11 @@ void Basic_Render_Entity::setDeleteFlag(bool nVal)
 	this->Delete = nVal;
 }
 
+bool Basic_Render_Entity::getGDeleteFlag()
+{
+	return this->Delete;
+}
+
 GFXDrawPriority Basic_Render_Entity::getDrawPrio()
 {
 	return this->drawPrio;

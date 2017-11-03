@@ -1,5 +1,11 @@
 Levy Devlog:
 
+2017-11-03
+Continued work on Unit_Functionality and some vector functions. Mainly added some different ways to manipulate velocity.
+Also did some small work on rotation and continued implement move in basic_unit.
+Did not do a build or commit, will wait with that until I feel that basic_unit is somewhat complete
+
+
 2017-11-01
 Created Game_Entity which inherits from Game_Object and implements lifeTime, ID, ToC, position and health.
 Did some research, all trig functions are available in std libs. I might write my own wrapper tho, undecided on that one.

@@ -20,16 +20,16 @@ public:
 	bool getAlive();
 	void setAlive(bool newValue);
 
-	bool getDeleteFlag();
-	void setDeleteFlag(bool nVal = true);
+	virtual bool getDeleteFlag();
+	virtual void setDeleteFlag(bool nVal = true);
 
 	//Abstract class.
 	virtual void OBJ_Update() = 0;
 protected:
 	//If alive is set to false, the game will not update or draw this entity at all.
 	bool Alive;
-	//Set to true when this entity should be deleted
-	bool Delete;
+	//Delete object flag
+	bool OBJ_Delete;
 	//Can be used to identify an object. Can/should not be changed after the object is initialized.
 	Object_Type OBJ_Type;
 };

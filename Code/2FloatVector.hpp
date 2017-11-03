@@ -16,7 +16,12 @@ Vector2D(sf::Vector2<T>or_orig):x(or_orig.x),y(or_orig.y){}
 	
 void Zero(){x=0.0; y=0.0;}
 
-Vector2D rotate(double m_rads);
+//Rotates this vector by m_rads radians
+void rotate(double m_rads);
+
+//Returns this vector rotated by m_rads, but does not change the original vector
+Vector2D rotated(double m_rads);
+
 
 inline double    LengthSq()const
 {
@@ -47,7 +52,27 @@ inline int       Sign(const Vector2D& v2)const;
 static inline Vector2D  Perp(Vector2D vec);
 
 //adjusts x and y so that the length of the vector does not exceed max
-inline void      Truncate(double max);
+inline void   Truncate(double max)
+{
+	if (this->Length() > max)
+	{
+		*this = this->Normalize();
+
+		*this *= max;
+	}
+}
+
+inline static Vector2D Truncate(Vector2D vec, double max)
+{
+	Vector2D res;
+	if (vec.Length() > max)
+	{
+		res = vec.Normalize();
+
+		res *= max;
+	}
+	return res;
+}
 
  //returns the distance between this vector and the one passed as a parameter
 inline double    Distance(const Vector2D &v2)const;
@@ -55,8 +80,19 @@ inline double    Distance(const Vector2D &v2)const;
  //squared version of above.
 inline double    DistanceSq(const Vector2D &v2)const;
 
-//Returns the scale of this vector
-static inline Vector2D	 Scale(Vector2D vec, double factor);
+//Returns the scaled version of this vector
+static inline Vector2D	 Scale(Vector2D vec, double factor)
+{
+	return Vector2D(vec.x*factor, vec.y*factor);
+}
+
+inline void Scale(double factor)
+{
+	*this = Vector2D::Scale(*this, factor);
+}
+
+//Gives angle in the range [-pi,pi] radian from vector 1 to vector 2
+static double Vector2D::angleBetween(Vector2D vec1, Vector2D vec2);
 
 inline Vector2D  Reflect(const Vector2D& norm);
 

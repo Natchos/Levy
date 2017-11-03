@@ -1,8 +1,8 @@
 #pragma once
 #include "2FloatVector.hpp"
 
-//Returns this vector, rotated by m_rads Radians.
-Vector2D Vector2D::rotate(double m_rads)
+
+void Vector2D::rotate(double m_rads)
 {
 	double new_x = this->x;
 	double new_y = this->y;
@@ -10,7 +10,15 @@ Vector2D Vector2D::rotate(double m_rads)
 	new_y = this->x * sin(m_rads) + this->y * cos(m_rads);
 	this->x = new_x;
 	this->y = new_y;
-	return Vector2D(new_x,new_y);
+}
+
+Vector2D Vector2D::rotated(double m_rads)
+{
+	double new_x = this->x;
+	double new_y = this->y;
+	new_x = this->x * cos(m_rads) - this->y * sin(m_rads);
+	new_y = this->x * sin(m_rads) + this->y * cos(m_rads);
+	return Vector2D(new_x, new_y);
 }
 
 inline double Vector2D::Dot(const Vector2D& v2)const
@@ -53,10 +61,11 @@ inline double Vector2D::DistanceSq(const Vector2D &v2)const
   return ySeparation*ySeparation + xSeparation*xSeparation;
 }
 
- inline Vector2D Vector2D::Scale(Vector2D vec, double factor)
-{
-	return Vector2D(vec.x*factor, vec.y*factor);
-}
+
+ double Vector2D::angleBetween(Vector2D vec1, Vector2D vec2)
+ {
+	 return atan2(vec2.y, vec2.x) - atan2(vec1.y, vec1.x);
+ }
 
 inline Vector2D Vector2D::Reflect(const Vector2D& norm)
 {
@@ -66,15 +75,27 @@ inline Vector2D Vector2D::Reflect(const Vector2D& norm)
 }
 
 
-inline void Vector2D::Truncate(double max)
-{
-  if (this->Length() > max)
-  {
-    this->Normalize();
+//inline void Vector2D::Truncate(double max)
+//{
+//	if (this->Length() > max)
+//	{
+//	*this = this->Normalize();
+//
+//	*this *= max;
+//  } 
+//}
 
-    *this *= max;
-  } 
-}
+//inline Vector2D Vector2D::Truncate(Vector2D vec, double max)
+//{
+//	Vector2D res;
+//	if (vec.Length() > max)
+//	{
+//		res = vec.Normalize();
+//
+//		res *= max;
+//	}
+//	return res;
+//}
 
 inline Vector2D Vector2D::GetReverse(Vector2D vec)
 {

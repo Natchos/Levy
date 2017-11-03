@@ -8,7 +8,6 @@ class Game_Entity : public Game_Object
 protected:
 	static int IDCounter;
 	Watch lifeClock;
-	Vector2D position;
 	int ID; //Permament and unique identifier
 	double ToC;
 	long lifetime;
@@ -21,15 +20,14 @@ protected:
 public:
 
 	//Constructors
-	Game_Entity(Vector2D pos, long lt, int sz, int mHealth, int cHealth);
-	Game_Entity(Vector2D pos, int sz, int mHealth);
+	Game_Entity(long lt, int sz, int mHealth, int cHealth);
+	Game_Entity(int sz, int mHealth);
 	Game_Entity(long lt, int sz, int mHealth);
 
 	//Abstract
 	virtual void OBJ_Update() = 0;
 
 	//Gets&sets
-	Vector2D getPosition();
 	int getID();
 	double getToC();
 	long getLifetime();
@@ -38,9 +36,6 @@ public:
 	int getMaxHealth();
 	int getCurrentHealth();
 	
-
-	void setPosition(Vector2D nPos);
-	void incrementPosition(Vector2D nPos);
 	void setLifetime(long nLifetime);
 	void setSize(int nSize);
 	void setmaxHealth(int nHealthMax, bool ovr = false);

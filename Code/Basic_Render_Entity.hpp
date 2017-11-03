@@ -16,7 +16,8 @@ public:
 	bool getVisible();
 	void setVisible(bool newVisible);
 	//Allows you to flag for deletion
-	void setDeleteFlag(bool nVal = true);
+	virtual void setDeleteFlag(bool nVal = true);
+	bool getGDeleteFlag();
 	//Get and set Draw Prio
 	GFXDrawPriority getDrawPrio();
 	void setDrawPrio(GFXDrawPriority newPriority);

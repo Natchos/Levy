@@ -2,7 +2,7 @@
 #include "Unit_Functionality.hpp"
 #include "2FloatVector.hpp"
 
-void Unit_Functionality::rotate(double rads)
+void Unit_Functionality::rotateFacing(double rads)
 {
 	if (rads > 0)
 	{
@@ -20,18 +20,20 @@ void Unit_Functionality::rotate(double rads)
 	}
 }
 
-Unit_Functionality::Unit_Functionality(Vector2D vel, int maxVel, Vector2D dest, Vector2D fac, double rotSpeed)
+Unit_Functionality::Unit_Functionality(Vector2D vel, float maxVel, float maxAcc, Vector2D dest, Vector2D fac, double rotSpeed)
 {
 	this->velocity = vel;
 	this->maxVelocity = maxVel;
+	this->maxAcceleration = maxAcc;
 	this->destination = dest;
 	this->facing = fac;
 	this->rotationSpeed = rotSpeed;
 }
 
-Unit_Functionality::Unit_Functionality(int maxVel, double rotSpeed)
+Unit_Functionality::Unit_Functionality(float maxVel, float maxAcc, double rotSpeed)
 {
 	this->maxVelocity = maxVel;
+	this->maxAcceleration = maxAcc;
 	this->rotationSpeed = rotSpeed;
 	this->velocity = Vector2D(0, 0);
 	this->destination = Vector2D(0, 0);
@@ -63,12 +65,17 @@ void Unit_Functionality::setDestination(Vector2D des)
 
 void Unit_Functionality::setDirection(Vector2D dir)
 {
-	
+	this->facing = dir.Normalize();
 }
 
-void Unit_Functionality::setMaxVelocity(int maxVel)
+void Unit_Functionality::setMaxVelocity(float maxVel)
 {
 	this->maxVelocity = maxVel;
+}
+
+void Unit_Functionality::setMaxAcceleration(float maxAcc)
+{
+	this->maxAcceleration = maxAcc;
 }
 
 void Unit_Functionality::setRotationSpeed(double rSpeed)
@@ -91,12 +98,53 @@ Vector2D Unit_Functionality::getDirection()
 	return this->facing;
 }
 
-int Unit_Functionality::getMaxVelocity()
+float Unit_Functionality::getMaxVelocity()
 {
 	return this->maxVelocity;
+}
+
+float Unit_Functionality::getMaxAcceleration()
+{
+	return this->maxAcceleration;
 }
 
 double Unit_Functionality::getRotationSpeed()
 {
 	return this->rotationSpeed;
+}
+
+void Unit_Functionality::incrementVelocity(Vector2D acc)
+{
+	//Saves sqrt. 
+	if (acc.LengthSq() > this->maxAcceleration*this->maxAcceleration)
+	{
+		this->velocity += Vector2D::Truncate(acc, maxAcceleration);
+	}
+	else
+		this->velocity += (acc*maxAcceleration);
+	this->restrainVelocity();
+}
+
+void Unit_Functionality::incrementVelocity(Vector2D facing, float scale)
+{
+	this->velocity += (facing *= (scale*maxAcceleration));
+	this->restrainVelocity();
+}
+
+void Unit_Functionality::incrementVelocity()
+{
+	this->velocity += (facing *= maxAcceleration);
+	this->restrainVelocity();
+}
+
+void Unit_Functionality::scaleVelocity(float percentage)
+{
+	this->velocity.Scale(percentage);
+	this->restrainVelocity();
+}
+
+void Unit_Functionality::restrainVelocity()
+{
+	if (this->velocity.LengthSq() > this->maxVelocity*this->maxVelocity) //Save the sqrt
+		this->velocity.Truncate(maxVelocity);
 }

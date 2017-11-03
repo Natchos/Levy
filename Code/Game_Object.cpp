@@ -34,11 +34,11 @@ void Game_Object::setAlive(bool nVal)
 //Returns deletion flag state
 bool Game_Object::getDeleteFlag()
 {
-	return this->Delete;
+	return this->OBJ_Delete;
 }
 
 //Mark for deletion
 void Game_Object::setDeleteFlag(bool nVal)
 {
-	this->Delete = nVal;
+	this->OBJ_Delete = nVal;
 }
