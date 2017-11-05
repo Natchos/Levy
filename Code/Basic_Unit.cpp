@@ -11,7 +11,7 @@ Basic_Unit::Basic_Unit(long lt, int sz, int mHealth, int cHealth, Vector2D vel, 
 //Specifies how this entitys graphical charasteristics should be behave/update
 void Basic_Unit::GFX_Update()
 {
-	
+	int x = 0;
 }
 
 void Basic_Unit::setDeleteFlag(bool nVal)
