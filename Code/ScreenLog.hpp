@@ -33,14 +33,13 @@ public:
 	void AddMessage(std::string msg);
 
 	//Change if windows resolution/size is changed.
-	void setWindowSize();
+	void setWindowSize(Vector2D newWndSize);
 
 	//The actual text messages
-	std::vector<TimedText> Lines;
+	std::vector<TimedText*> Lines;
 
 	//Update. Takes care of deletion and moving the objects
 	void Update();
 
-	//Called by the GraphicsManager. Sends the text objects to be rendered by the graphics manager.
-	std::vector<sf::Text*> SendListToRender();
+
 };

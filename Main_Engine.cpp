@@ -66,13 +66,18 @@ bool main_Initialization()
 					SCRLOG->AddMessage("Graphics Manager Initialized");
 					CONLOG->Log("Initializing Messaging Manager", LogPriority::SysInformation);
 					GFXMGR->Homebrew_Render_PTR()->setPosition(sf::Mouse::getPosition());
-
 					CONLOG->Log("Messaging Manager Initialized");
 					CONLOG->Log("Initializing Sound Manager", LogPriority::SysInformation);
 					if (SFXMGR->Initialize("/Music","/Effects"))
 					{
 						CONLOG->Log("Sound Manager initialized", LogPriority::SysInformation);
-
+						if (INPMGR->Initialize(SCRLOG))
+						{
+							CONLOG->Log("Input Manager initialized.", LogPriority::SysInformation);
+						}
+						else
+							CONLOG->Log("Input manager failed to inatialize. Shutting down.", LogPriority::Severe);
+						
 					}
 					else
 						CONLOG->Log("Sound Manager failed to initalize. Soundless mode initiated.", LogPriority::Severe);

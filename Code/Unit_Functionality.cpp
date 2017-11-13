@@ -30,6 +30,15 @@ Unit_Functionality::Unit_Functionality(Vector2D vel, float maxVel, float maxAcc,
 	this->rotationSpeed = rotSpeed;
 }
 
+Unit_Functionality::Unit_Functionality(Vector2D vel, float maxVel, float maxAcc,  Vector2D fac, double rotSpeed)
+{
+	this->velocity = vel;
+	this->maxVelocity = maxVel;
+	this->maxAcceleration = maxAcc;
+	this->facing = fac;
+	this->rotationSpeed = rotSpeed;
+}
+
 Unit_Functionality::Unit_Functionality(float maxVel, float maxAcc, double rotSpeed)
 {
 	this->maxVelocity = maxVel;

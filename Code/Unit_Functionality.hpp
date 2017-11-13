@@ -31,6 +31,9 @@ public:
 	//Full constructor
 	Unit_Functionality(Vector2D vel, float maxVel, float maxAcc, Vector2D dest, Vector2D fac, double rotSpeed);
 
+	//Full constructor w/o destination
+	Unit_Functionality(Vector2D vel, float maxVel, float maxAcc, Vector2D fac, double rotSpeed);
+
 	//Neccessary only constructor
 	Unit_Functionality(float maxVel, float maxAcc, double rotSpeed);
 

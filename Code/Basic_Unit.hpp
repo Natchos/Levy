@@ -15,8 +15,12 @@ protected:
 
 public:
 
-	//Default constructor
-	Basic_Unit(long lt, int sz, int mHealth, int cHealth, Vector2D vel, float maxVel, float maxAcc, Vector2D dest, Vector2D fac, double rotSpeed);
+	//Graphical initializer
+	void IntializeGraphics(sf::Texture texture, Vector2D scale, Vector2D position, Vector2D origin);
+	//Full constructor
+	Basic_Unit(long lt, int sz, int mHealth, int cHealth, Vector2D vel, float maxVel, float maxAcc, Vector2D fac, double rotSpeed);
+	//Simple constructor
+	Basic_Unit(int sz, int mHealth, float maxVel, float maxAcc, Vector2D fac, double rotSpeed);
 	//Implementing inherited abstract functions
 	void GFX_Update();
 	void move();

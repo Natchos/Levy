@@ -1,10 +1,25 @@
 #include "Basic_Unit.hpp"
 
 
-Basic_Unit::Basic_Unit(long lt, int sz, int mHealth, int cHealth, Vector2D vel, float maxVel, float maxAcc, Vector2D dest, Vector2D fac, double rotSpeed) : Game_Entity(lt, sz, mHealth, cHealth), 
-	Unit_Functionality(vel, maxVel, maxAcc, dest, fac, rotSpeed)
+Basic_Unit::Basic_Unit(long lt, int sz, int mHealth, int cHealth, Vector2D vel, float maxVel, float maxAcc, Vector2D fac, double rotSpeed) : Game_Entity(lt, sz, mHealth, cHealth),
+	Unit_Functionality(vel, maxVel, maxAcc, fac, rotSpeed)
 {
 
+}
+
+Basic_Unit::Basic_Unit(int sz, int mHealth, float maxVel, float maxAcc, Vector2D fac, double rotSpeed) : Game_Entity(sz, mHealth),
+Unit_Functionality( maxVel, maxAcc, rotSpeed)
+{
+	this->setDirection(fac);
+}
+
+
+void Basic_Unit::IntializeGraphics(sf::Texture texture, Vector2D scale, Vector2D position, Vector2D origin)
+{
+	this->setTexture(texture);
+	this->setScale(scale.x,scale.y);
+	this->setPosition(position);
+	this->setOrigin(origin);
 }
 
 

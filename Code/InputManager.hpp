@@ -14,8 +14,12 @@ class InputManager
 	//Keeps track of previous keypresses.
 	std::vector<sf::Keyboard::Key> keyPresses;
 
+	//Pointer to ScreenLog for debugging & message purposes
+	ScreenLog* ScrLog;
+
 public:
-	
+	bool Initialize(static ScreenLog* ptrScrLog);
+
 	InputManager();
 
 	//Handles event looping and mouse events.

@@ -19,7 +19,7 @@ struct TimedText : public sf::Text, Watch
 	TimedText(const TimedText&) : sf::Text()
 	{
 	};
-	TimedText(sf::Text& text) : sf::Text()
+	TimedText(sf::Text& text) : sf::Text(text)
 	{
 	};
 	sf::Text* getBase()

@@ -40,15 +40,15 @@ void GraphicsManager::Update()
 			}
 		}
 		//std::vector<sf::Text*> RenderLog = ScrLog->SendListToRender();
-		for(std::vector<TimedText>::iterator iter = ScrLog->Lines.begin(); iter != ScrLog->Lines.end(); iter++)
+		for(std::vector<TimedText*>::iterator iter = ScrLog->Lines.begin(); iter != ScrLog->Lines.end(); iter++)
 		{
-			Homebrew_Render->draw(*iter);
+			Homebrew_Render->draw(**iter);
 		}
-		if(ScrLog->Lines.size() != 0)
+		/*if(ScrLog->Lines.size() != 0)
 		{
 			std::string ex(ScrLog->Lines[0].getBase()->getString());
 			Homebrew_Render->draw(sf::Text(ScrLog->Lines[0]));
-		}
+		}*/
 		Homebrew_Render->display();
 		UpdateTimer.reset();
 	}

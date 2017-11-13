@@ -17,6 +17,8 @@ Map
 	update();
 	
 	Node(GraphicEntity, BaseEntity):
+		Height
+		Neighbours (9x *Node)
 		Type
 		Occupied?
 		
@@ -25,7 +27,7 @@ UI
 
 
 Entities:
-  Player
+  (Player)
   Position
   ID
   ToC
@@ -76,4 +78,7 @@ threads:
   graphicLoop
   input
   
-  
+move:
+	Updates position
+	Rotate if it can/should
+	
