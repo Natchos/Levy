@@ -1,16 +1,18 @@
 #include "Basic_Unit.hpp"
 
 
-Basic_Unit::Basic_Unit(long lt, int sz, int mHealth, int cHealth, Vector2D vel, float maxVel, float maxAcc, Vector2D fac, double rotSpeed) : Game_Entity(lt, sz, mHealth, cHealth),
+Basic_Unit::Basic_Unit(long lt, int sz, int mHealth, int cHealth, Vector2D vel, float maxVel, float maxAcc, Vector2D fac, double rotSpeed, std::string fName) : Game_Entity(lt, sz, mHealth, cHealth),
 	Unit_Functionality(vel, maxVel, maxAcc, fac, rotSpeed)
 {
-
+	this->setDirection(fac);
+	this->factionName = fName;
 }
 
-Basic_Unit::Basic_Unit(int sz, int mHealth, float maxVel, float maxAcc, Vector2D fac, double rotSpeed) : Game_Entity(sz, mHealth),
-Unit_Functionality( maxVel, maxAcc, rotSpeed)
+Basic_Unit::Basic_Unit(int sz, int mHealth, float maxVel, float maxAcc, Vector2D fac, double rotSpeed, std::string fName) : Game_Entity(sz, mHealth),
+Unit_Functionality(maxVel, maxAcc, rotSpeed)
 {
 	this->setDirection(fac);
+	this->factionName = fName;
 }
 
 
@@ -69,4 +71,14 @@ void Basic_Unit::OBJ_Update()
 			this->setAlive(false);
 		}
 	}
+}
+
+std::string Basic_Unit::getFaction()
+{
+	return this->factionName;
+}
+
+void Basic_Unit::setFaction(std::string nFaction)
+{
+	this->factionName = nFaction;
 }

@@ -8,6 +8,7 @@ Abstract class so needs to be subclassed. The move function needs to be implemen
 class Unit_Functionality
 {
 protected:
+
 	// Velocity per frame
 	Vector2D velocity;
 
