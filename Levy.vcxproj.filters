@@ -93,6 +93,18 @@
     <ClCompile Include="Code\Game_Entity.cpp">
       <Filter>Source Files\Levy Source</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Faction.cpp">
+      <Filter>Source Files\Levy Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Levy_Enums.cpp">
+      <Filter>Source Files\Levy Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Military_Unit.cpp">
+      <Filter>Source Files\Homebrew</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Military_Functionality.cpp">
+      <Filter>Source Files\Homebrew</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sfml 32\include\sfml\audio\AlResource.hpp">
@@ -423,6 +435,18 @@
       <Filter>Header Files\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Code\Game_Entity.hpp">
+      <Filter>Header Files\Levy Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Player.hpp">
+      <Filter>Header Files\Levy Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Faction.hpp">
+      <Filter>Header Files\Levy Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Military_Unit.hpp">
+      <Filter>Header Files\Levy Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Military_Functionality.hpp">
       <Filter>Header Files\Levy Code</Filter>
     </ClInclude>
   </ItemGroup>
