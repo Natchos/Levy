@@ -16,7 +16,7 @@ Unit_Functionality(maxVel, maxAcc, rotSpeed)
 }
 
 
-void Basic_Unit::IntializeGraphics(sf::Texture texture, Vector2D scale, Vector2D position, Vector2D origin)
+void Basic_Unit::InitializeGraphics(sf::Texture texture, Vector2D scale, Vector2D position, Vector2D origin)
 {
 	this->setTexture(texture);
 	this->setScale(scale.x,scale.y);

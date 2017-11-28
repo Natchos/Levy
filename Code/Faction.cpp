@@ -11,8 +11,9 @@ Faction::Faction(std::string name)
 
 void Faction::createUnit(Basic_Unit* ptr)
 {
-
+	this->ownedUnits.push_back(ptr);
 }
+
 void Faction::createUnit(UnitType uType, Vector2D pos)
 {
 
