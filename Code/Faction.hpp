@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Basic_unit.hpp"
+#include "Military_Unit.hpp"
+#include "ScreenLog.hpp"
 #include "Levy_Enums.cpp"
 
 /*
@@ -11,7 +13,7 @@
 class Faction 
 {
 public:
-	Faction(std::string name);
+	Faction(std::string name, ScreenLog* Writer);
 	//Faction(std::string name, std::vector<Basic_Unit*> startingUnits, std::vector<Basic_Buildings*> startingBuildings)
 
 	void createUnit(Basic_Unit* ptr);
@@ -43,4 +45,7 @@ private:
 	std::vector<Basic_Unit*> selectedUnits;
 
 	std::string factionName;
+
+	//All are going to point to same pointer anyway.
+	static ScreenLog* scrPrt;
 };

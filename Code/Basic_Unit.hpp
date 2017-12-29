@@ -16,16 +16,12 @@ protected:
 	void rotateTowardsDestination();
 
 public:
-	//Military initializer. Subclassed.
-	void InitializeMilFunctionality(UnitType uType);
 	//Graphical initializer
 	void InitializeGraphics(sf::Texture texture, Vector2D scale, Vector2D position, Vector2D origin);
 	//Full constructor
 	Basic_Unit(long lt, int sz, int mHealth, int cHealth, Vector2D vel, float maxVel, float maxAcc, Vector2D fac, double rotSpeed, std::string fName);
 	//Simple constructor
 	Basic_Unit(int sz, int mHealth, float maxVel, float maxAcc, Vector2D fac, double rotSpeed, std::string fName);
-	//Initialisation via unittype. Unittype charasteristics are stored in a txt file.
-	Basic_Unit(UnitType uType);
 	//Implementing inherited abstract functions
 	void GFX_Update();
 	void move();

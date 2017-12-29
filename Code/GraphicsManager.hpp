@@ -11,10 +11,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
-enum GraphicsSource
-{
-	Peasant = 0
-};
 /* This class manages all the graphical objects in the program(atleast the ones that are descended from the Basic_Render_Entity)
 * Its main function is the GFX_Update, but it also contains various functions for accessing and modifying a sprite, allowing
 * search by ID */

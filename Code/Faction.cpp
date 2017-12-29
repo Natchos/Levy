@@ -3,9 +3,10 @@
 #include "Faction.hpp"
 
 
-Faction::Faction(std::string name)
+Faction::Faction(std::string name, ScreenLog* Writer)
 {
 	this->factionName = name;
+	this->scrPrt = Writer;
 }
 
 
@@ -16,7 +17,57 @@ void Faction::createUnit(Basic_Unit* ptr)
 
 void Faction::createUnit(UnitType uType, Vector2D pos)
 {
+	int health;
+	AttackMech aMech;
+	DamageType dType;
+	int dmg;
+	int rng;
+	float atkArc;
+	int millis;
+	int size;
+	float maxVel;
+	float maxAcc;
+	float rotSpeed;
 
+	switch (uType)
+	{
+	case(Peasant):
+		health = 150;
+		aMech = AttackMech::ShortMelee;
+		dType = DamageType::Bludgeoning;
+		dmg = 15;
+		rng = 5;
+		atkArc = 1 / 5;
+		millis = 3000;
+		size = 10;
+		maxVel = 4;
+		maxAcc = 0.6;
+		rotSpeed = 1 / 36;
+		break;
+	case(Levy):
+		health = 450;
+		aMech = AttackMech::LongMelee;
+		dType = DamageType::Piercing;
+		dmg = 40;
+		rng = 30;
+		atkArc = 1 / 8;
+		millis = 4000;
+		size = 15;
+		maxVel = 6;
+		maxAcc = 0.6;
+		rotSpeed = 1 / 24;
+		break;
+	case(ManAtArms):
+		break;
+	case(Soldier):
+		break;
+	case(Knight):
+		break;
+	case(Retinue):
+		break;
+	}
+	Military_Unit* miluPTR = new Military_Unit();
+	this->ownedUnits.push_back()
 }
 
 void Faction::select(std::vector<Basic_Unit*> selection)
