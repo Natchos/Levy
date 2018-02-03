@@ -1,0 +1,54 @@
+*****Unit Types
+* First the types are listed and after each type there is the line in the file where its description starts.
+* Descriptions are structured according to:
+* TypeName(IMPORTANT, match to engine type name)
+* Health
+* AttackMech
+* DamageType
+* Damage
+* Range
+* AttackArc(in terms of PI from the facing. 1/4 means that the total arc is (1/4+1/4) of an circle).
+* Recharge
+* Size
+* MaxVelocity
+* MaxAcceleration
+* RotationSpeed
+
+Peasant
+150
+ShortMelee
+Bludgeoning
+15
+5
+1/5
+3000
+10
+4
+0.6
+1/36
+	
+Levy
+450
+LongMelee
+Piercing
+40
+30
+1/8
+4000
+15
+6
+0.6
+1/24
+	
+ManAtArms
+600
+ShortMelee
+Slashing
+50
+15
+1/3
+2000
+10
+5
+0.6
+1/48

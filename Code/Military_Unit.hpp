@@ -10,6 +10,7 @@
 */
 class Military_Unit : public Basic_Unit
 {
+public:
 	//Creates a basic unit without any attacks
 	Military_Unit(long lt, int sz, int mHealth, int cHealth, Vector2D vel, float maxVel, float maxAcc, Vector2D fac, double rotSpeed, std::string fName);
 	//Simple constructor, same as above

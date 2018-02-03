@@ -1,14 +1,20 @@
 #pragma once
-
 #include "Faction.hpp"
 
 
-Faction::Faction(std::string name, ScreenLog* Writer)
+ScreenLog* Faction::scrPrt;
+Console_Log* Faction::CLogPrt;
+
+Faction::Faction(std::string name)
 {
 	this->factionName = name;
-	this->scrPrt = Writer;
 }
 
+void Faction::SetStatics(ScreenLog* ptr1, Console_Log* ptr2)
+{
+	Faction::scrPrt = ptr1;
+	Faction::CLogPrt = ptr2;
+}
 
 void Faction::createUnit(Basic_Unit* ptr)
 {
@@ -66,8 +72,8 @@ void Faction::createUnit(UnitType uType, Vector2D pos)
 	case(Retinue):
 		break;
 	}
-	Military_Unit* miluPTR = new Military_Unit();
-	this->ownedUnits.push_back()
+	Military_Unit* miluPTR = new Military_Unit(size,health,maxVel,maxAcc,Vector2D(1,1),rotSpeed,this->factionName);
+	this->ownedUnits.push_back(miluPTR);
 }
 
 void Faction::select(std::vector<Basic_Unit*> selection)

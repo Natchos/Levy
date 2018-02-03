@@ -3,6 +3,7 @@
 #include "Basic_unit.hpp"
 #include "Military_Unit.hpp"
 #include "ScreenLog.hpp"
+#include "Console_Log.hpp"
 #include "Levy_Enums.cpp"
 
 /*
@@ -13,7 +14,7 @@
 class Faction 
 {
 public:
-	Faction(std::string name, ScreenLog* Writer);
+	Faction(std::string name);
 	//Faction(std::string name, std::vector<Basic_Unit*> startingUnits, std::vector<Basic_Buildings*> startingBuildings)
 
 	void createUnit(Basic_Unit* ptr);
@@ -35,10 +36,13 @@ public:
 
 	Basic_Unit* getUnit(int ID);
 
+	//All are going to point to same pointer anyway.
+	static ScreenLog* scrPrt;
+	static Console_Log* CLogPrt;
 
+	static void SetStatics(ScreenLog* ptr1, Console_Log* ptr2);
 
 private:
-
 
 	std::vector<Basic_Unit*> ownedUnits;
 	//std::vector<Basic_Buildings> ownedBuildings; Not yet implemented.
@@ -46,6 +50,4 @@ private:
 
 	std::string factionName;
 
-	//All are going to point to same pointer anyway.
-	static ScreenLog* scrPrt;
 };
