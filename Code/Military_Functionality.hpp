@@ -9,6 +9,8 @@ class Military_Functionality
 {
 public:
 	Military_Functionality(int bDamage, AttackMech aMech, DamageType dType, int bRange, double aArc, int bRecharge);
+	//Default ctor.
+	Military_Functionality();
 
 	int getBaseDamage();
 	void setBaseDamage(int bDamage);

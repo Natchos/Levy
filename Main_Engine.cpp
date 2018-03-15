@@ -7,6 +7,7 @@
 #include "Code/ScreenLog.hpp"
 #include "Code/InputManager.hpp"
 #include "Code/SoundManager.hpp"
+#include "Code/Faction.hpp"
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
@@ -67,6 +68,7 @@ bool main_Initialization()
 					CONLOG->Log("Initializing Messaging Manager", LogPriority::SysInformation);
 					GFXMGR->Homebrew_Render_PTR()->setPosition(sf::Mouse::getPosition());
 					CONLOG->Log("Messaging Manager Initialized");
+					Faction::SetStatics(SCRLOG, CONLOG);
 					CONLOG->Log("Initializing Sound Manager", LogPriority::SysInformation);
 					if (SFXMGR->Initialize("/Music","/Effects"))
 					{

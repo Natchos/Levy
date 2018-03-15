@@ -9,6 +9,16 @@ Military_Functionality::Military_Functionality(int bDamage, AttackMech aMech, Da
 
 }
 
+Military_Functionality::Military_Functionality()
+{
+	baseDamage = 0;
+	atkMech = AttackMech::ShortMelee;
+	dmgType = DamageType::Bludgeoning;
+	range = 1;
+	attackArc = 1;
+	recharge = 1000;
+}
+
 int Military_Functionality::getBaseDamage()
 {
 	return baseDamage;

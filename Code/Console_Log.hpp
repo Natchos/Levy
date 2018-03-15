@@ -43,9 +43,6 @@ public:
 	//Creates the actual log file
 	bool Write_Log_File();
 
-	//Adds a message
-	void AddMessage(std::string  Msg);
-
 	//Singleton design
 	static Console_Log* Instance();
 

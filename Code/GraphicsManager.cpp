@@ -50,11 +50,6 @@ void GraphicsManager::Update()
 		{
 			Homebrew_Render->draw(**iter);
 		}
-		/*if(ScrLog->Lines.size() != 0)
-		{
-			std::string ex(ScrLog->Lines[0].getBase()->getString());
-			Homebrew_Render->draw(sf::Text(ScrLog->Lines[0]));
-		}*/
 		Homebrew_Render->display();
 		UpdateTimer.reset();
 	}
