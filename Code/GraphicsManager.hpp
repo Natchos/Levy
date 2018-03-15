@@ -23,7 +23,9 @@ class GraphicsManager
 public:
 	//Initializes the Graphics Manager. Creates a renderwindow and sets its dimensions, either according to parameters or failing that, through the desktop mode.
 	//FPS is set to 60 as default value.
-	bool Initialize(static ScreenLog* ScrLogPtr, int Height = -1, int Width = -1, int FPS = 60);
+	bool Initialize(static Console_Log* ConLogPtr, static ScreenLog* ScrLogPtr, int Height = -1, int Width = -1, int FPS = 60);
+
+	bool loadTexture(sf::String filename);
 
 	//Graphical Update/Render
 	void Update();
@@ -43,6 +45,9 @@ public:
 	//If direct access to the Render Window is needed.
 	sf::RenderWindow* Homebrew_Render_PTR();
 private:
+
+	//bool loadTextures();
+
 	//Visual FPS
 	int DesiredFPS;
 	//Used to time every frame
@@ -61,4 +66,7 @@ private:
 	
 	//Screenlog pointer, for rendering purposes.
 	ScreenLog* ScrLog;
+
+	//
+	Console_Log* ConLog;
 };

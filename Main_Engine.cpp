@@ -60,7 +60,7 @@ bool main_Initialization()
 			{
 				CONLOG->Log("Object Manager Initialized");
 				CONLOG->Log("Initializing Graphics Manager", LogPriority::SysInformation);
-				if(GFXMGR->Initialize(SCRLOG, 600,840,60))
+				if(GFXMGR->Initialize(CONLOG, SCRLOG, 600,840,60))
 				{
 					CONLOG->Log("Graphics Manager Initialized");
 					SCRLOG->AddMessage("Graphics Manager Initialized");

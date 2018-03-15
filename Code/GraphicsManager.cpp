@@ -2,15 +2,21 @@
 #include "GraphicsManager.hpp"
 
 //Initialization
-bool GraphicsManager::Initialize(static ScreenLog* ScrLogPtr, int Height, int Width, int FPS)
+bool GraphicsManager::Initialize(static Console_Log* ConLogPtr, static ScreenLog* ScrLogPtr, int Height, int Width, int FPS)
 {
 	this->ScrLog = ScrLogPtr;
+	this->ConLog = ConLogPtr;
 	if(Height != -1 && Width != -1)
 		Homebrew_Render = new sf::RenderWindow(sf::VideoMode::VideoMode(Width,Height), "Homebrew Pre-Omega");
 	else
 		Homebrew_Render = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "Homebrew Pre-Omega");
 	this->DesiredFPS = FPS;
 	Homebrew_Render->setFramerateLimit(DesiredFPS);
+	if (!this->loadTexture("Graphics/Peasant.jpg"))
+	{
+		ConLog->Log("Unable to load textures.");
+		return false;
+	}
 	return true;
 }
 //Update function. Iterates through all objects and draws them in appropriate order, based on their draw priority enum value.
@@ -52,6 +58,28 @@ void GraphicsManager::Update()
 		Homebrew_Render->display();
 		UpdateTimer.reset();
 	}
+}
+
+bool GraphicsManager::loadTexture(sf::String filename)
+{
+	sf::Texture nText;
+	/*Keep all default textures here. I'll probably clean this upp later,
+	once the project is large. Maybe use a txt file with all graphics names?*/
+	try
+	{
+		if (!nText.loadFromFile(filename))
+		{
+			throw "Error, failed to load file: " + filename;
+			return false;
+		}	
+	}
+	catch(...)
+	{
+		ConLog->Write_Log_File();
+		ConLog->Log("Error, failed to load file: " + filename, LogPriority::Medium);		
+	}
+	this->TextureVector.push_back(nText);
+	return true;
 }
 
 void GraphicsManager::AddEntity(Basic_Render_Entity* nVal)
